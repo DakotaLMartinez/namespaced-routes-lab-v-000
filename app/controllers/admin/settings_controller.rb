@@ -3,7 +3,7 @@ class Admin::SettingsController < ApplicationController
     if Preference.first.present?
       @preference = Preference.first
     else 
-      @preference = Preference.create
+      @preference = Preference.create(song_sort_order: "DESC", artist_sort_order: "DESC")
     end
   end
 

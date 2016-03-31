@@ -3,7 +3,7 @@ class Admin::AccessController < ApplicationController
     if Preference.first.present?
       @preference = Preference.first
     else
-      @preference = Preference.create
+      @preference = Preference.create(allow_create_artists: true, allow_create_songs: true)
     end
   end
 
